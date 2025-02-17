@@ -66,10 +66,13 @@ There is 180 degree phase shift between input and output
 Gain=21 dB
 
 ## Inference:
-1.The Width of the MOSFET directly effects the Drain durrent.\
-2.By changing the dimensions of the MOSFET we can directly control the amount of Drain current.\
-3.180 degree phase shift between the input and output waveform.\
-4.The CS amplifier has larger gain =21dB.(ie, the ouput signal is 21 times larger then the input signal)\
+1. The MOSFET's width has a direct impact on the drain current.
+2. We can directly regulate the amount of drain current by altering the MOSFET's size.
+Phase shift between the input and output waveforms of 3.180 degrees
+
+4. The gain of the CS amplifier is higher, at 21dB.(For example, the output signal is twenty-one times greater than the input signal for
+
+
 
 ### Design 2: Simulation of CMOS Amplifier
 ### Aim
@@ -135,10 +138,9 @@ There is 180 degree phase shift between input and output
 Gain=0.612 dB
 
 ## Inference:
-1.The Width of the MOSFET directly effects the Drain durrent.\
-2.By changing the dimensions of the MOSFET
- -M1 -when varying the width of PMOS there is not a lot of change in the drain current(ie, I<sub>d</sub> doesn't get effected much).\
- -M2 -when varying the width of NMOS there is drastic change in the drain current.\
-3.If width is increased it leads to a higher gain
-4.180 degree phase shift between the input and output waveform.\
-5.The CMOS amplifier has gain =5.5 dB.(ie, the ouput signal is almost 6 times larger then the input signal)\
+1. The MOSFET's width has a direct impact on the drain current.
+The drain current does not change significantly when the width of PMOS is changed due to changes in the MOSFET's M1 dimensions (i.e., I<sub>d</sub> is not affected much).The drain current changes dramatically when the NMOS width is changed, according to M2.
+3. If width is increased it leads to a higher gain. 
+4. 180 degree phase shift between the input and output waveforms result from increasing width.
+5. The CMOS amplifier has a gain of 0.612 dB.In other words, the output signal is nearly 0.6 times bigger than the input signal.
+
