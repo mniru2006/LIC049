@@ -1,157 +1,234 @@
-# Expeiment-3
+### **"Differential Amplifier"**
 
-## Aim:
-Design and Analyze the MOS differential amplifier circuit for the following specifcations and Perform DC analysis,Transient Analysis,Frequency response and extract parmeter
+A differential amplifier is a fundamental building block in analog circuit design, widely used in applications such as signal amplification, noise reduction, and data acquisition systems. It amplifies the difference between two input signals while rejecting common-mode noise, making it ideal for high-precision circuits, including operational amplifiers and analog front-end systems.
 
-VDD=2.2v,P<=2mW,Vicm=1.2v,Vocm=1.25v,Vp=0.4v
+In modern electronics, differential amplifiers play a crucial role in communication systems, biomedical instrumentation, and sensor interfaces, where signal integrity is critical. The ability to suppress external interference and unwanted signals makes them superior to single-ended amplifiers in noisy environments.
 
-#### Differential Amplifier:
+### **question:Vdd=2.2v , p<=2.2mv , Vicm=1.2v, Vocm=1.25v , Vp=0.4v**
 
-differential amplifiers  consist of two transistors M1 and M2, whose sources are joined together. If two transistor are connected to the different voltage input then there current across M1 and M2 are different due to gate voltage.If in case the voltage supply at gate terminal is same then the current through the M1 and M2 are same.This configuration is called "Common Mode input voltage differential Amplifier".WHatever may be the load resistor, the MOSFET M1 and M2 should not go to the Triode region. It should be verified that MOSFET should be in Saturation Region.
+**Circuit 1** <br>
 
-For all this circuit we need find out the AC analysis ,Transient analysis And Frequency Response.
-# Circuit-1
-Components Required: MOSFET(M1,M2 and M3), Resistor,voltage supply's 
-![exp3c](https://github.com/user-attachments/assets/d254d715-429c-40fe-ad76-53cdb6b1f9e4)
+![exp3c](https://github.com/user-attachments/assets/cc3bf852-bada-4373-87e6-2b139cfb7672)
 
 
-
-Procedure :
-Make the circuit connection as given above.
-connect the resister at the source terminal of both mosfet 
-now calculate the value of Iss as power and vdd is given
-and calculate the Id1 and Id2 
-now calculate the Rss and Rd 
-
-Now to get the desired values of output voltage and current we have to vary the width and length of both the mosfet
-we got L=1m and W=24.9m 
-![image](https://github.com/user-attachments/assets/5128ccce-289b-476f-bed6-f8cbf9ea0d4c)
+**Step 1:Dc analysis design Rd and Rss**
+![WhatsApp Image 2025-03-03 at 11 46 51_889aaf8d](https://github.com/user-attachments/assets/14b7637c-256c-46c2-9336-72dc8e6a7ded)
 
 
+from the calculation we have finded Iss value as 1mA <br>
+Id1 and Id2 as 0.5mA <br>
+Rd as 1.9kohm <br>
+Rss as 400ohm <br>
+Vgs=vg - vp = 1.2v - 0.4v = 0.8v <br>
+Vov = vgs - vth = 0.8v - 0.366v = 0.434v <br>
+
+### **DC Analysis**
+
+To set the operating point go to Configure Analysis and select Dc operating Point <br>
+
+to set correct operating point vary width and length values 
+width = 6.45u <br>
+length = 180n <br>
+![exp3dc](https://github.com/user-attachments/assets/4fd87afb-13ef-4c3a-bb74-81046cc8b822)
+
+
+### **Analysis**
+
+**Increase Vicm from 1.2v to 1.3v and observe Vocm and Vp** <br>
+| **Common-Mode Input Voltage (V_ICM)** | **Output Voltage (V_out)** | **Voltage at Point P (V_P)** |
+|--------------------------------------|--------------------------|--------------------------|
+| **1.2V**                            | **1.24836V**             | **0.4V**                |
+| **1.3V**                            | **1.1V**                 | **0.46V**               |
+
+### Effect of VICM on Vout and VP
+
+As the common-mode input voltage \( VICM \) increases, the source voltage \( VP \) also increases, causing a shift in the operating point. This leads to a higher drain current, resulting in a greater voltage drop across \( RD \), which reduces \( Vout \).
+
+![Screenshot 2025-03-02 165923](https://github.com/user-attachments/assets/9935d54d-cf30-47ea-80d7-b6691c1cbb31)
+
+### **Calculate maximum input and output Swing**
+
+![WhatsApp Image 2025-03-03 at 11 57 11_d4811d07](https://github.com/user-attachments/assets/fbadbee5-9795-4b4d-a718-e68649dce37e)
+
+
+### **GAIN**
+![WhatsApp Image 2025-03-03 at 11 57 32_f7c5bba7](https://github.com/user-attachments/assets/c0bf6b33-33eb-4e2d-b80c-e3134eb34557)
 
 
 
+### **TRANSIENT ANALYSIS**
+go to configure Analysis and select transient analysis then <br>
+stop time as 5m <br>
+time to start saving data as 0 <br>
+
+• Waveform Type: Sine Wave
+• Amplitude: 50 mV
+• DC Offset: 1.2 V
+• Frequency: 1 kHz
 
 
-# DC analysis:
+![Screenshot 2025-03-02 222413](https://github.com/user-attachments/assets/87c3521e-0a76-4b97-a9cf-b4032c82922d)
 
 
-   To perform the DC analysis we have to select the {DC op pnt} in the edit simulation command and run the simulation
-   the figure below is the values obtained from the DC analysis
+### **AC Analysis**
 
-![exp3dc](https://github.com/user-attachments/assets/eb2328a6-1fa5-475f-bcb9-ddac21edef72)
+go to configure analysis and select AC Analysis
+• Type of sweep: Decade
+• Number of points per decade: 5
+• Start frequency: 0.1 Hz
+• Stop frequency: 1 THz
 
+Set <br>
+AC Amplitude as 1 and AC Phase as 0 in V1 <br>
+AC Amplitude as 1 and AC Phase as 180 in V2 <br>
 
-Here in dc analysis we got the vout as expected and id1 and id2 we got the same 
-
-
-# Transient analysis:
-
-  To perform transient analysis we have to select the transient analysis in the edit simulation
-   and give the stop time as 5ms and run the simulation .
-   and the graph velow shows the transient response of the design.
-
-   ![Screenshot 2025-03-02 222413](https://github.com/user-attachments/assets/1816471b-f5af-4a2e-b683-e49322ad36f2)
-
-
-
-# AC analysis:
-
-   TO perform AC analysis we have to select the ac analysis in the edit simulation command given the values as shown below
-
-   ![Screenshot 2025-02-17 184334](https://github.com/user-attachments/assets/b5b9b5b2-cc27-459c-87d9-27411895f901)
+  ![Screenshot 2025-02-17 184334](https://github.com/user-attachments/assets/b5b9b5b2-cc27-459c-87d9-27411895f901)
  
 
    ![1 4](https://github.com/user-attachments/assets/e38ceac5-13a9-46b8-ad3c-efeac570178f)
 
 
+### **Circuit 2** <br>
+
+Replacing Resistor with Current Source
+
+![image](https://github.com/user-attachments/assets/0da961ce-df7a-4896-acaa-8f31f65f5bab)
 
 
+### **DC Analysis**
 
-# Circuit-2:
+![Screenshot 2025-03-02 222935](https://github.com/user-attachments/assets/d922b434-5aa1-4bb5-8855-bf281f8d0f53)
 
+### **TRANSIENT ANALYSIS**
+![image](https://github.com/user-attachments/assets/7c668786-784e-48bd-93b2-21d45c488f80)
+ Vocm = 1.36 -1.13
+  Vin = 1.25 - 1.15 V
 
-Now replace the R3 resister with a current source :
-connect a current souce of 1mA
-![image](https://github.com/user-attachments/assets/904b40b3-b1dc-40ba-9d7b-0f6713e478bb)
+  Gain = vocm / Vin
+   = (1.36 - 1.13) / (1.25 - 1.15)
 
-
-
-
-# DC analysis:
-
-  To perform the DC analysis we have to select the {DC op pnt} in the edit simulation command and run the simulation
-   the figure below is the values obtained from the DC analysis
-
-  ![image](https://github.com/user-attachments/assets/021268d1-be7a-4d12-959c-fb069852cd8c)
-
-
-
-
-   # Trasient analysis:
-
-  To perform transient analysis we have to select the transient analysis in the edit simulation
-   and give the stop time as 5ms and run the simulation .
-   and the graph velow shows the transient response of the design
-
-   
-   we have to give deg of 180deg to one mosfet and 0deg to the other mosfet
-   and ac amplitude 1 for one mosfet and 0 for other mosfet
-  ![Screenshot 2025-03-02 220014](https://github.com/user-attachments/assets/8e4c15d1-706e-42ee-b6fb-ee16e28983c4)
-
-
-
-
- # AC analysis:
+ = 2.3
+ Gain in dB: 20 log (2.3)
+ =7.23
  
-  <img width="959" alt="image" src="https://github.com/user-attachments/assets/98ec35e3-cac9-41a6-b2cf-5384f4559b01" />
+
+
+
+### **AC Analysis**
+<img width="959" alt="image" src="https://github.com/user-attachments/assets/75f328de-9ee0-4011-ab77-b6078fc720c0" />
 
 
 
 
-  # Circuit-3:
+### **Circuit 3** <br>
 
-  Now replace the R3 resister with a Mosfet  :
-    Given vp=0.4v and wkt vt=0.36v we got the gate voltage of the new mosfet as 0.76v 
+Replacing current Source with MOSFET 
 
-  ![image](https://github.com/user-attachments/assets/4565061b-ac59-4f4f-8a9a-0582ed2c7403)
-
-
- To get the output voltage and vp and current desired value we have to 
- vary the width and length of the new mosfet
-![image](https://github.com/user-attachments/assets/54c1b180-0ea5-4bac-92a3-9c99cb5d6795)
+![image](https://github.com/user-attachments/assets/6d27b01b-f1ff-4995-8ab1-ff0f91a954a4)
 
 
+How to find Vb?🤔🤔
+Vb = vth + Vp <br>
+Vb = 0.366v + 0.4v <br>
+Vb = 0.766v <br>
 
-# DC analysis:
-![image](https://github.com/user-attachments/assets/d0fd306c-8480-4ad2-ab36-49a8f5c2e282)
+### **DC Analysis**
 
+<img width="472" alt="image" src="https://github.com/user-attachments/assets/417842be-d7ad-4955-8086-b77ea97d490e" />
 
  # Transient analysis:
- give ac amplitude as 1 for one mosfet and 0 for other mosfet 
+ give ac amplitude as 1 for one mosfet and 0 gor other mosfet 
 
- ![image](https://github.com/user-attachments/assets/6251a343-ad89-4442-9c38-313acc5ca01d)
-
+ ![Screenshot 2025-03-02 123127](https://github.com/user-attachments/assets/431d7132-e2fb-4870-b625-a5334a2e9a9d)
 
 # AC analysis:
 <img width="959" alt="image" src="https://github.com/user-attachments/assets/56a10839-f8b8-40e4-8c2f-a01d9dda29f3" />
 
 
 
+# DC sweep :
+<img width="959" alt="image" src="https://github.com/user-attachments/assets/15f102e5-5ba4-40c5-965c-3c6d8668217b" />
+
+
+# Result:
+
+1. Circuit-1: 
+   - The DC analysis shows that the MOSFETs operate in saturation with balanced drain currents when input voltages are equal.  
+   - The transient response confirms proper differential behavior.  
+   - The AC analysis indicates moderate gain and common-mode rejection.  
+
+2. Circuit-2:  
+   - Replacing the resistor with a current source improves bias stability, as seen in the DC analysis.  
+   - The transient response is more stable, ensuring better symmetry.  
+   - The AC analysis shows increased gain and bandwidth compared to Circuit-1.  
+
+3. Circuit-3:  
+   - The DC analysis confirms that the MOSFET-based current source regulates the tail current effectively.  
+   - The transient response maintains signal accuracy with improved performance.  
+   - The AC analysis shows higher gain and bandwidth.  
+   - The DC sweep analysis validates expected output variations.  
+
+# Inference:  
+
+This experiment explored differential amplifier configurations: resistor-based, current source-based, and NMOS-based, each affecting gain, bandwidth, and stability differently.  
+
+- Resistor: High bandwidth, low gain, low CMRR.  
+- Current source: High gain, high CMRR, slightly lower bandwidth.  
+- NMOS (CMOSN): Highest gain.  
+
+ Best Configuration Based on Need:  
+1. High bandwidth → Resistor  
+2. Maximum gain→ NMOS (CMOSN)  
+3. Better CMRR→ Current source or NMOS (CMOSN)
 
 
 
 
 
-  
-
-
-   
 
 
 
-   
 
-   
 
-   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
