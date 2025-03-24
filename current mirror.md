@@ -36,11 +36,10 @@ WKT (w/L) ratio is 16.667.
 
 Therefore for L=180nm the w=3um.
 
-Mosfet M1: Id = 0.000277527
+Mosfet M1: Id = 0.00027
+Mosfet M2: Id = 0.00027
 
-Mosfet M2: Id = 0.000277527
-
-Mosfet M3: Id = 0.0002778           
+Mosfet M3: Id = 0.00027           
 
 **(b)L=500nm.**
 
@@ -48,11 +47,11 @@ WKT(w/L) ratio is 16.667.
 
 Therefore for L=500nm the w=8.334um.
 
-Mosfet M1: Id = 0.000281241
+Mosfet M1: Id = 0.00028
 
-Mosfet M2: Id = 0.000281241
+Mosfet M2: Id = 0.00028
 
-Mosfet M3: Id = 0.0002778          
+Mosfet M3: Id = 0.000277         
 
 **(c)L=1um.**
 
@@ -61,11 +60,10 @@ WKT (w/L) ratio is 16.667.
 Therefore for L=1um the w=16.667um.
 
 
-Mosfet M1: Id = 0.000280654
+Mosfet M1: Id = 0.00028
 
-Mosfet M2: Id = 0.000280654
-
-Mosfet M3: Id = 0.0002778            
+Mosfet M2: Id = 0.00028
+Mosfet M3: Id = 0.00027           
 
 
 ## Transient Analysis:
