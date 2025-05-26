@@ -254,7 +254,6 @@ If connected wrong, click on the wrong connection. Else click on 'Delete all con
 
 ![image](https://github.com/user-attachments/assets/8bec8876-7cee-4575-aef3-9e4e60491a70)
 
-# Virtual Lab Simulation of Astable Multivibrator
 # Simulation in Virtual Lab Astable Multivibrator
 ## Procedure:
 1) Connect the components as follows: L1 to L12, L14 to L12, L16 to L12, L4 to L9, L8 to L9, L10 to L19, L3 to L17, L11 to L13, L7 to L19, L6 to L13, L2 to L13, L5 to L15, and L18 to L9. (For example, click on point 1 and drag it to point 12, and continue similarly.)
